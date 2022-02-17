@@ -1,3 +1,4 @@
+# TODO: upgrade to OAS 3.1 once supported by more tools
 openapi: '3.0.3'
 info:
   title: Note API
