@@ -2,7 +2,7 @@
 openapi: '3.0.3'
 info:
   title: Note API
-  version: '0.0.3'
+  version: '0.0.4'
 servers:
   - url: http://localhost:8080
     description: local
@@ -33,11 +33,7 @@ paths:
     post:
       summary: Create note
       requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Note'
+        $ref: '#/components/requestBodies/note'
       responses:
         '200':
           $ref: '#/components/responses/note'
@@ -57,6 +53,8 @@ paths:
       summary: Update note
       parameters:
         - $ref: '#/components/parameters/noteId'
+      requestBody:
+        $ref: '#/components/requestBodies/note'
       responses:
         '200':
           $ref: '#/components/responses/note'
@@ -100,6 +98,13 @@ paths:
         default:
           $ref: '#/components/responses/error'
 components:
+  requestBodies:
+    note:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Note'
   parameters:
     noteId:
       name: noteId
