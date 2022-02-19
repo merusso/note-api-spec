@@ -2,7 +2,7 @@
 openapi: '3.0.3'
 info:
   title: Note API
-  version: '0.0.4'
+  version: '0.0.5'
 servers:
   - url: http://localhost:8080
     description: local
@@ -69,6 +69,16 @@ paths:
           description: No content
         default:
           $ref: '#/components/responses/error'
+  /users:
+    post:
+      summary: Create user
+      requestBody:
+        $ref: '#/components/requestBodies/user'
+      responses:
+        '200':
+          $ref: '#/components/responses/user'
+        default:
+          $ref: '#/components/responses/error'
   /users/{userId}:
     get:
       summary: Get user
@@ -83,6 +93,8 @@ paths:
       summary: Update user
       parameters:
         - $ref: '#/components/parameters/userId'
+      requestBody:
+        $ref: '#/components/requestBodies/user'
       responses:
         '200':
           $ref: '#/components/responses/user'
@@ -105,6 +117,12 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Note'
+    user:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
   parameters:
     noteId:
       name: noteId
