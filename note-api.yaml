@@ -2,7 +2,9 @@
 openapi: '3.0.3'
 info:
   title: Note API
-  version: '0.0.7'
+  version: '0.0.8'
+  description: |
+    The Note API is an API to store, retrieve text-based notes.
 servers:
   - url: http://localhost:8080
     description: local
