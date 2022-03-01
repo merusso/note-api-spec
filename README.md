@@ -1,6 +1,6 @@
 # Note API Spec
 
-This repository contains the API spec for Note API. The Note API is an API to
+This repository contains the API spec for Note API. The Note API is a web API to
 store, retrieve text-based notes.
 
 This API spec is written in [OpenAPI Specification 3.0](https://swagger.io/specification/)
