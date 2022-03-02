@@ -2,7 +2,7 @@
 openapi: '3.0.3'
 info:
   title: Note API
-  version: '0.0.11'
+  version: '0.0.12'
   description: |
     The Note API is an API to store, retrieve text-based notes.
 servers:
@@ -17,14 +17,17 @@ paths:
           name: userId
           schema:
             type: string
+            example: '621e25d546ca105d43d1d073'
         - in: query
           name: title
           schema:
             type: string
+            example: Hawaii
         - in: query
           name: label
           schema:
             type: string
+            example: vacations
       responses:
         '200':
           description: OK
